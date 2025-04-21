@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigmaMCPServer", "DigmaMCPServer\DigmaMCPServer.csproj", "{DCBB3F61-6390-4C88-B276-C992CF062996}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigmaSSEServer", "DigmaSSEServer\DigmaSSEServer.csproj", "{644134E6-2F7B-4FD4-B2ED-802643643BD7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{DCBB3F61-6390-4C88-B276-C992CF062996}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCBB3F61-6390-4C88-B276-C992CF062996}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCBB3F61-6390-4C88-B276-C992CF062996}.Release|Any CPU.Build.0 = Release|Any CPU
+		{644134E6-2F7B-4FD4-B2ED-802643643BD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{644134E6-2F7B-4FD4-B2ED-802643643BD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{644134E6-2F7B-4FD4-B2ED-802643643BD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{644134E6-2F7B-4FD4-B2ED-802643643BD7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
