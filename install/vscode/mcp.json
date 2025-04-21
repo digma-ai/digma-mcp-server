@@ -1,0 +1,54 @@
+{
+  "inputs": [
+      {
+          "type": "promptString",
+          "id": "email",
+          "description": "email",
+          "password": false
+        },
+        {
+          "type": "promptString",
+          "id": "password",
+          "description": "password",
+          "password": true
+        },
+        {
+          "type": "promptString",
+          "id": "server_url",
+          "description": "server url",
+          "password": false
+        },
+        {
+          "type": "promptString",
+          "id": "server_token",
+          "description": "server access token",
+          "password": false
+        }
+  ],
+  "servers": {
+      "digma-mcp-server": {
+          "type": "stdio",
+          "command": "docker",
+          "args": [
+              "run",
+              "-i",
+              "--rm",
+              "-e",
+              "Auth__Email",
+              "-e",
+              "Auth__Password",
+              "-e",
+              "ServerUrl",
+              "-e",
+              "Auth__ApiToken",
+              "digmatic/digma-mcp-server:0.0.1"
+          ],
+           "env": {
+               "Auth__Email": "${input:email}",
+               "Auth__Password": "${input:password}",
+               "ServerUrl": "${input:server_url}",
+               "Auth__ApiToken": "${input:server_token}"
+          }
+      }
+  }
+}

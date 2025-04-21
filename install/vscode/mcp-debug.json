@@ -1,0 +1,45 @@
+{
+    "inputs": [
+        {
+            "type": "promptString",
+            "id": "email",
+            "description": "email",
+            "password": false
+          },
+          {
+            "type": "promptString",
+            "id": "password",
+            "description": "password",
+            "password": true
+          },
+          {
+            "type": "promptString",
+            "id": "server_url",
+            "description": "server url",
+            "password": false
+          },
+          {
+            "type": "promptString",
+            "id": "server_token",
+            "description": "server access token",
+            "password": false
+          }
+    ],
+    "servers": {
+        "digma-mcp-server": {
+            "type": "stdio",
+            "command": "dotnet",
+            "args": [
+                "run",
+                "--project",
+                "/Users/shaykeren/work/digma-mcp-server/src/DigmaMCPServer/DigmaMCPServer.csproj"
+            ],
+             "env": {
+                 "Auth__Email": "${input:email}",
+                 "Auth__Password": "${input:password}",
+                 "Auth__ApiToken": "${input:server_token}",
+                 "ServerUrl": "${input:server_url}"
+            }
+        }
+    }
+}

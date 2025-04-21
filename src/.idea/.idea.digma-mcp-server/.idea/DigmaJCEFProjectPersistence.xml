@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="org.digma.intellij.plugin.ui.jcef.persistence.JCEFProjectPersistence">
+    <state>
+      <entry>
+        <PersistenceKey key="services" />
+        <PersistenceValue filter="[]" />
+      </entry>
+      <entry>
+        <PersistenceKey key="issuesFilters" />
+        <PersistenceValue filter="{&quot;issueTypes&quot;:[],&quot;issueTypesInGlobalScope&quot;:[],&quot;criticalityFilterInGlobalScope&quot;:[&quot;Medium&quot;,&quot;High&quot;],&quot;filters&quot;:[]}" />
+      </entry>
+    </state>
+  </component>
+</project>
