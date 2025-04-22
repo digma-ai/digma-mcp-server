@@ -1,12 +1,8 @@
 name: Release Publish
 
 on:
-  workflow_dispatch:
-    inputs:
-      version:
-        description: 'Version to publish (e.g., 1.0.0)'
-        required: true
-        type: string
+  release:
+    types: [released]
 
 permissions:
   packages: write
@@ -34,7 +30,7 @@ jobs:
         with:
           images: digmatic/digma-sse-server
           tags: |
-            type=raw,value=${{ github.event.inputs.version }}
+            type=raw,value=${{ replace(github.event.release.tag_name, 'v', '') }}
             type=raw,value=latest,enable=${{ github.ref == format('refs/heads/{0}', 'main') }}
 
       - name: Build and push Docker image
