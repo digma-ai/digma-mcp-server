@@ -1,9 +1,8 @@
-name: Publish Docker Image
+name: Publish
 
 on:
-  workflow_dispatch:
   release:
-    types: [released]
+    types: [released, prereleased]
 
 permissions:
   packages: write
@@ -31,14 +30,9 @@ jobs:
         with:
           images: digmatic/digma-sse-server
           tags: |
-            type=schedule
-            type=ref,event=branch
-            type=ref,event=pr
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
-            type=semver,pattern={{major}}
-            type=sha
-            type=raw,value=latest,enable=${{ github.ref == format('refs/heads/{0}', 'main') }}
+            type=raw,value=${{ github.event.release.tag_name[1:] }}
+            type=raw,value=preview,enable=${{ github.event.release.prerelease }}
+            type=raw,value=latest,enable=${{ !github.event.release.prerelease }}
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
