@@ -87,8 +87,8 @@ public class CodeObservabilityTool
          "Find out what affects performance in the application the most. Returns a list of assets (can be code locations, endpoints, database queries etc.) and their  performance impact, which is measured by the time cost of exeecuting these assets.")]
     public static async Task<string> GetTopPerformanceImpactingAssets(DigmaClient client,
         [Description("The environment id")] string environmentId,
-        [Description("The asset category name")]
-        string? assetCategory = null,
+        [Description("The asset category name. Leave empty string for all categories")]
+        string? assetCategory = "",
         [Description("Page number (zero-based)")]
         int page = 0,
         [Description("Number of items per page")]

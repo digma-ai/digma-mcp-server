@@ -106,12 +106,12 @@ public class DigmaClient
         return await response.Content.ReadAsStringAsync();
     }
 
-    public async Task<string> GetAssetsByCategory(string environmentId, string? category = null, int page = 0, int pageSize = 10)
+    public async Task<string> GetAssetsByCategory(string environmentId, string? category = "", int page = 0, int pageSize = 10)
     {
         var request = new
         {
             environmentId,
-            category,
+            category = string.IsNullOrEmpty(category) ? null : category,
             page,
             pageSize
         };
