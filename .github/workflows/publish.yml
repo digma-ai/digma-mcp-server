@@ -24,13 +24,13 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Extract metadata for Docker
+      - name: Extract Docker metadata
         id: meta
         uses: docker/metadata-action@v5
         with:
           images: digmatic/digma-sse-server
           tags: |
-            type=raw,value=${{ github.event.release.tag_name[1:] }}
+            type=semver,pattern={{version}}
             type=raw,value=preview,enable=${{ github.event.release.prerelease }}
             type=raw,value=latest,enable=${{ !github.event.release.prerelease }}
 
@@ -41,4 +41,4 @@ jobs:
           file: ./src/DigmaSSEServer/Dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }} 
+          labels: ${{ steps.meta.outputs.labels }}
