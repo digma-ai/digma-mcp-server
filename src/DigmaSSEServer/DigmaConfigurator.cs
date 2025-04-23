@@ -26,24 +26,10 @@ public static class DigmaConfigurator
             return handler;
         }
 
-        services.AddHttpClient(TokenClientName, (sp, c) =>
-            {
-                var digma = sp.GetRequiredService<IOptions<DigmaOptions>>().Value;
-                var auth = sp.GetRequiredService<IOptions<AuthOptions>>().Value;
-
-                c.BaseAddress = new Uri(digma.AnalyticsApi);
-                c.DefaultRequestHeaders.Add("Digma-Access-Token", auth.Token);
-            })
+        services.AddHttpClient(TokenClientName, ConfigureHttpClient)
             .ConfigurePrimaryHttpMessageHandler(CreateHandler);
 
-        services.AddHttpClient<DigmaClient>((sp, c) =>
-            {
-                var digma = sp.GetRequiredService<IOptions<DigmaOptions>>().Value;
-                var auth = sp.GetRequiredService<IOptions<AuthOptions>>().Value;
-
-                c.BaseAddress = new Uri(digma.AnalyticsApi);
-                c.DefaultRequestHeaders.Add("Digma-Access-Token", auth.Token);
-            })
+        services.AddHttpClient<DigmaClient>(ConfigureHttpClient)
             .ConfigurePrimaryHttpMessageHandler(sp =>
             {
                 var delegating = sp.GetRequiredService<BearerTokenHandler>();
@@ -60,5 +46,14 @@ public static class DigmaConfigurator
         });
 
         return services;
+    }
+
+    private static void ConfigureHttpClient(IServiceProvider sp, HttpClient c)
+    {
+        var digma = sp.GetRequiredService<IOptions<DigmaOptions>>().Value;
+        var auth = sp.GetRequiredService<IOptions<AuthOptions>>().Value;
+
+        c.BaseAddress = new Uri(digma.AnalyticsApi);
+        c.DefaultRequestHeaders.Add("Digma-Access-Token", $"Token {auth.Token}");
     }
 }
