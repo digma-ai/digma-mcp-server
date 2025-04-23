@@ -1,4 +1,3 @@
-using System.Net;
 using DigmaSSEServer;
 using DigmaSSEServer.Tools;
 using ModelContextProtocol.Protocol.Types;
@@ -15,6 +14,11 @@ builder.Services
     })
     .WithHttpTransport() // OR WithStdioServerTransport()
     .WithTools<CodeObservabilityTool>();
+
+builder.WebHost.ConfigureKestrel(k =>
+{
+    k.ListenAnyIP(5194);
+});
 
 var app = builder.Build();
 
