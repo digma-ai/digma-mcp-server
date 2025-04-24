@@ -4,7 +4,7 @@ A Model Context Protocol (MCP) server implementation for enabling agents to acce
 
 ## Key Features 🚀
 
-*   **🗣️ Observability-assisted code reviews:** Instruct your LLM to perform Unity tasks.
+*   **🗣️ Observability-assisted code reviews:** Check the PR branch for any issues discovered by pre-prod observability.
 *   **🔎 Find code inefficiencies with dynamic code analysis:** Identify issues in the code/queries that are slowing the app down
 *   **🔭 Utilize code runtime usage data from distributed tracing:** Check for breaking changes or generated relevant tests
 
