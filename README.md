@@ -30,8 +30,8 @@ To get started:
 
 ## Installation ⚙️
 
-Configure your MCP Client (Claude, Cursor, etc.) to include the Digma MCP
-The Digma MCP is included as a remote SSE server in your Digma deployment. You can configure it using its URL in your client, or use an MCP tool such as [SuperGateway](https://github.com/supercorp-ai/supergateway) to run it as a command tool. 
+Configure your MCP Client (Claude, Cursor, etc.) to include the Digma MCP.
+The Digma deployment includes the MCP SSE server. You can configure it using its URL in your client, or use an MCP tool such as [SuperGateway](https://github.com/supercorp-ai/supergateway) to run it as a command tool. 
 The MCP URL path is composed of the Digma API Key as follows:
 `https://<DIGMA_URL>/<DIGMA_API_TOKEN>>/sse`
 
