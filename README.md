@@ -1,4 +1,4 @@
-# Digma MCP Server
+# Digma Code Observability MCP Server
 
 A Model Context Protocol (MCP) server implementation for enabling agents to access observability insights using [Digma](https://digma.ai) for code observability and dynamic code analysis
 
