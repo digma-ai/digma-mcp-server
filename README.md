@@ -43,7 +43,7 @@ If your client supports SSE servers, you can use the following syntax:
   {
     "mcpServers": {
       "digma": {
-      "url": "https://<DIGMA_URL>/mcp/DIGMA_API_TOKEN>/sse",
+      "url": "https://<DIGMA_API_URL>/mcp/DIGMA_API_TOKEN>/sse",
      
         }
       // ... other servers might be here ...
@@ -61,7 +61,7 @@ To use the MCP server as a command tool, use the [SuperGateway](https://github.c
         "-y",
         "supergateway",
         "--sse",
-        "https://<DIGMA_URL>/mcp/DIGMA_API_TOKEN>/sse"
+        "https://<DIGMA_API_URL>/mcp/DIGMA_API_TOKEN>/sse"
       ]
     }
   }
