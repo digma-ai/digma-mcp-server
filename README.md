@@ -67,6 +67,33 @@ To use the MCP server as a command tool, use the [SuperGateway](https://github.c
   }
 ```
 
+---
+
+## Using rules 👨‍💼
+
+The agent is autonomous and selects when to use the data provided by Digma as needed, however, some clients allow setting rules and policies to set a more structured process.
+Here is an example rules file which you can add to your cursor `.cursor/rules` directory
+```markdown
+# Digma Memory File - Code Review Instructions
+
+## Runtime Analysis Settings
+- Environment: TEST
+
+## Code Review Protocol
+1. For any code or branch review request:
+   - Get the list of changed files and methods in the current branch using `git diff`
+   - Check for ALL runtime issues in TEST environment (not just for the method in context)
+   - Check if any runtime issue may be related to the changed code
+   - Check the runtime usage of the changed methods (based on the `git diff`)
+   - Check if any of the changed methods (based on the `git diff`) have a high risk based on their performance impact 
+   - Synthesize the data with standard code review analysis
+
+
+## Note
+This file is used by the AI assistant to maintain consistent review protocols across sessions. 
+```
+
+
 
 ## License 📜
 
