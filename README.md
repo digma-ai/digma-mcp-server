@@ -21,11 +21,7 @@ A Model Context Protocol (MCP) server implementation for enabling agents to acce
 ## How It Works 🔧
 
 Digma is an application that pre-processes your observability data to identify issues and track code performance and runtime data. 
-To get started:
-1.  **Deloy Digma in Your Cluster**: Digma is a K8s native application; follow this [guide](https://docs.digma.ai/digma-developer-guide/installation/central-on-prem-install) to install.
-2.  **Send Digma Traces:** Digma accepts any standard OTEL traces; it's easy to extend your data pipeline to [send the observability](https://docs.digma.ai/digma-developer-guide/instrumentation/instrumenting-your-code-for-tracing) data to your local Digma deployment. Alternatively, you can [dual-ship](https://docs.digma.ai/digma-developer-guide/instrumentation/sending-data-to-digma-using-the-datadog-agent) your Datadog traces if you're using DD.
-3.  **Follow the instructions below to install the Digma MCP Server with your GenAI agent**
-
+Check out our [MCP page](https://digma.ai/mcp/) to get started.
 ---
 
 ## Installation ⚙️
