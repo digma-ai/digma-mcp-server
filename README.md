@@ -23,10 +23,10 @@ A Model Context Protocol (MCP) server implementation for enabling agents to acce
 
 ---
 
-## How It Works 🔧
+## Get early access 👀
 
-Digma is an application that pre-processes your observability data to identify issues and track code performance and runtime data. 
-Check out our [MCP page](https://digma.ai/mcp/) to get started.
+Digma pre-processes your observability data to identify issues, track code performance and runtime data - for dynamic code analysis.
+Visit our [MCP page](https://digma.ai/mcp/) to sign up for early access to our MCP server.
 ---
 
 ## Installation ⚙️
