@@ -16,7 +16,7 @@ A Model Context Protocol (MCP) server implementation for enabling agents to acce
 * `Are there any new issues in this code based on the Staging environment?`
 * `Which database queries have the most impact on the application performance?`
 
-## Show me how it works 📺 
+## See it in action 📺 
 
 [![Code review with Digma MCP](https://img.youtube.com/vi/bFv-ptGvLo8/0.jpg)](https://www.youtube.com/watch?v=bFv-ptGvLo8)
 
